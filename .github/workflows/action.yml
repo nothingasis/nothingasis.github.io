@@ -12,13 +12,13 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install and Build 🔧
+      - name: Install and Build 🔧 # This step installs the dependencies and builds for production.
         run: |
           npm install
           npm run build
 
-      - name: Install SSH Client 🔑
-        uses: webfactory/ssh-agent@v0.2.0 # This step installs the ssh client into the workflow run.
+      - name: Install SSH Client 🔑 # This step installs the ssh client into the workflow run.
+        uses: webfactory/ssh-agent@v0.2.0
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
