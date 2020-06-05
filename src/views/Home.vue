@@ -16,7 +16,7 @@
     </v-row>
 
     <v-footer absolute color="white">
-      <v-row no-gutters justify="end">
+      <v-row no-gutters justify="end" class="pb-4">
         <a @click="$router.push({ name: 'Blog' })">blog</a>
       </v-row>
     </v-footer>
