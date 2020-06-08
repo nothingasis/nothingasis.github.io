@@ -8,11 +8,27 @@ const routes = [
     path: "/",
     name: "Home",
     component: () => import(/* webpackChunkName: "home" */ "@/views/Home.vue"),
+    meta: {
+      hideAppBar: true,
+    },
   },
   {
-    path: "/blog",
+    path: "/blog/",
     name: "Blog",
-    component: () => import(/* webpackChunkName: "Blog" */ "@/views/Blog.vue"),
+    component: () =>
+      import(
+        /* webpackChunkName: "BlogList" */ "@/components/Blog/BlogList.vue"
+      ),
+  },
+  {
+    path: "/blog/:id",
+    name: "Blog",
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "BlogPost" */ "@/components/Blog/BlogPost.vue"
+      ),
+    hideAppBar: false,
   },
 ];
 

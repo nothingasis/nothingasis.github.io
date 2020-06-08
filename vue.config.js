@@ -23,21 +23,21 @@ module.exports = {
     // appleMobileWebAppStatusBarStyle: "black",
     assetsVersion: "", // This option is used if you need to add a version to your icons and manifest, against browser’s cache. This will append ?v=<pwa.assetsVersion> to the URLs of the icons and manifest.
     manifestOptions: {
-      display: "standalone", // In order to show the Add to Home Screen Prompt, display must be set to standalone.
+      display: "standalone" // In order to show the Add to Home Screen Prompt, display must be set to standalone.
     },
     // Add the router fallback for off-line mode
     // https://stackoverflow.com/questions/49963982/vue-router-history-mode-with-pwa-in-offline-mode
     workboxOptions: {
-      navigateFallback: "index.html",
-    },
+      navigateFallback: "index.html"
+    }
   },
   configureWebpack: {
     plugins: [
       new webpack.DefinePlugin({
         "process.env": {
-          PACKAGE_VERSION: '"' + version + '"',
-        },
-      }),
-    ],
-  },
+          PACKAGE_VERSION: '"' + version + '"'
+        }
+      })
+    ]
+  }
 };
